@@ -1,31 +1,23 @@
 package Clases;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class Pan {
-    private String nameOfBread;
-    private String id;
-    private double price;
-    private int typeOfBread;
-    public Pan( String nameOfBread ,double price, int typeOfBread ){
-        this.nameOfBread = nameOfBread;
-        this.price = price;
-        this.typeOfBread = typeOfBread;
-        LocalDateTime now = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("mmssSSS");
-        this.id = now.format( formatter );
+    private String nombre;
+    private int unidades;
+    private double precio;
+    public Pan( String nombre, double precio, int unidades ){
+        this.nombre = nombre;
+        this.precio = precio;
+        this.unidades = unidades;
     }
-    public double getPrice(){
-        return this.price;
+    public double getPrecio() {
+     return precio;
     }
-    public String getNameOfBread() {
-        return nameOfBread;
+    public String getNombre() {
+        return nombre;
     }
-    public String getId() {
-        return id;
+    public int getUnidades() {
+        return unidades;
     }
-    public int getTypeOfBread() {
-        return typeOfBread;
+    public void quitarUnidad(){
+        this.unidades = this.unidades - 1;
     }
 }

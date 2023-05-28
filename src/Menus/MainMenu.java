@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class MainMenu {
     public static void mainMenu(Scanner input, Inventario inventario){
         System.out.println("Selecciona Opcion:");
-        System.out.println("01.Inventario\n02.Agregar Panes");
+        System.out.println("01.Inventario\n02.Agregar Panes\n10.Salir");
         switch ( input.nextInt() ){
             case 1:
                 InventarioMenu.inventarioMenu( input, inventario );

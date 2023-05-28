@@ -7,14 +7,22 @@ import java.util.Scanner;
 
 public class AddPanMenu {
     public static void addPan(Scanner input, Inventario inventario ){
-        int option;
-        System.out.println("Cuantos panes quieres agregar?");
-        option = input.nextInt();
-        for (int i = 1; i <= option ; i++) {
-            objectPan( input, inventario ,i );
-        }
+        newPan( input, inventario );
         MainMenu.mainMenu( input, inventario );
     }
+    private static void newPan( Scanner input, Inventario inventario){
+        String nombrePan;
+        double precioPan;
+        int unidadesPan;
+        System.out.println("Introduce nombre del pan");
+        nombrePan = input.next();
+        System.out.println("Introduce precio del pan");
+        precioPan = input.nextDouble();
+        System.out.println("Introduce unidades del pan");
+        unidadesPan = input.nextInt();
+        inventario.addBread( new Pan( nombrePan, precioPan, unidadesPan));
+    }
+    /*
     private static void objectPan( Scanner input, Inventario inventario , int numberOfBread ){
         int option;
         double price;
@@ -56,4 +64,5 @@ public class AddPanMenu {
             optionAddPan( input, inventario,option, price, nameOfBread, numberOfBread);
         }
     }
+     */
 }
